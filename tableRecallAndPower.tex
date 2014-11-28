@@ -1,0 +1,64 @@
+
+\begin{table*}
+\centering
+{\small
+    \begin{tabular}{|l|l|c|c|c|c|c|c|c|}
+    \hline
+	\multirow{2}{*}{~}			& \multirow{2}{*}{Approach}		& \multirow{2}{*}{\parbox{1.9cm}{Sleep Interval (seconds)}}	
+																						& \multicolumn{3}{c|}{Average Power (mW)}		& \multicolumn{3}{c|}{Recall} 													\\ \cline{4-9}
+								&								&						& Steps		& Headbutts	& Transitions	& Steps					& Headbutts					& Transitions 				\\ \hline
+	\multirow{14}{*}{\parbox{1.2cm}{Group 1 90\% idle}}	
+								& \multirow{5}{*}{Duty Cycling}	& 2						& \multicolumn{3}{c|}{339}				& 94\%					& 57\%						& 97\%						\\ \cline{3-9}
+								& 								& 5						& \multicolumn{3}{c|}{217}				& 82\%					& 14\%						& 47\%						\\ \cline{3-9}
+								& 								& 10					& \multicolumn{3}{c|}{140}				& 63\%					& 29\%						& 28\%						\\ \cline{3-9}
+								& 								& 20					& \multicolumn{3}{c|}{86.3}				& 48\%					& 14\%						& 32\%						\\ \cline{3-9}
+								& 								& 30					& \multicolumn{3}{c|}{63.1}				& 31\%					& 7\%						& 12\%						\\ \cline{2-9}
+								
+								& \multirow{5}{*}{Batching}		& 2						& \multicolumn{3}{c|}{350}				& \multirow{8}{*}{100\%}& \multirow{8}{*}{100\%}	& \multirow{8}{*}{100\%}	\\ \cline{3-6}
+								& 								& 5						& \multicolumn{3}{c|}{186}				&						&							&							\\ \cline{3-6}
+								& 								& 10					& \multicolumn{3}{c|}{115}				&						&							&							\\ \cline{3-6}
+								& 								& 20					& \multicolumn{3}{c|}{80.1}				&						&							&							\\ \cline{3-6}
+								& 								& 30					& \multicolumn{3}{c|}{68.3}				&						&							&							\\ \cline{2-6}
+								
+								& \multicolumn{2}{l|}{Significant Motion}				& \multicolumn{3}{c|}{67.5}				& 						& 							& 							\\ \cline{2-6}
+								& \multicolumn{2}{l|}{Simple Configurable Classifier}	& 48.3		& 23.3		& 18.6			& 						& 							& 							\\ \cline{2-6}
+								& \multicolumn{2}{l|}{Oracle}							& 41.5		& 21.6		& 16.4			& 						& 							& 							\\ \hline \hline
+								
+	\multirow{14}{*}{\parbox{1.2cm}{Group 2 50\% idle}}
+								& \multirow{5}{*}{Duty Cycling}	& 2						& \multicolumn{3}{c|}{334}				& 92\%					& 74\%						& 90\%						\\ \cline{3-9}
+								& 								& 5						& \multicolumn{3}{c|}{243}				& 79\%					& 31\%						& 53\%						\\ \cline{3-9}
+								& 								& 10					& \multicolumn{3}{c|}{176}				& 65\%					& 20\%						& 36\%						\\ \cline{3-9}
+								& 								& 20					& \multicolumn{3}{c|}{106}				& 33\%					& 5\%						& 10\%						\\ \cline{3-9}
+								& 								& 30					& \multicolumn{3}{c|}{80}				& 25\%					& 11\%						& 12\%						\\ \cline{2-9}
+								
+								& \multirow{5}{*}{Batching}		& 2						& \multicolumn{3}{c|}{350}				& \multirow{8}{*}{100\%}& \multirow{8}{*}{100\%}	& \multirow{8}{*}{100\%}	\\ \cline{3-6}
+								& 								& 5						& \multicolumn{3}{c|}{186}				&						&							&							\\ \cline{3-6}
+								& 								& 10					& \multicolumn{3}{c|}{115}				&						&							&							\\ \cline{3-6}
+								& 								& 20					& \multicolumn{3}{c|}{80.1}				&						&							&							\\ \cline{3-6}
+								& 								& 30					& \multicolumn{3}{c|}{68.3}				&						&							&							\\ \cline{2-6}
+								
+								& \multicolumn{2}{l|}{Significant Motion}				& \multicolumn{3}{c|}{196}				& 						& 							& 							\\ \cline{2-6}
+								& \multicolumn{2}{l|}{Simple Configurable Classifier}	& 188		& 45.3		& 43.3			& 						& 							& 							\\ \cline{2-6}
+								& \multicolumn{2}{l|}{Oracle}							& 153		& 42.2		& 29.5			& 						& 							& 							\\ \hline \hline
+
+	\multirow{14}{*}{\parbox{1.2cm}{Group 3 10\% idle}}
+								& \multirow{5}{*}{Duty Cycling}	& 2						& \multicolumn{3}{c|}{332}				& 89\%					& 47\%						& 89\%						\\ \cline{3-9}
+								& 								& 5						& \multicolumn{3}{c|}{257}				& 76\%					& 28\%						& 26\%						\\ \cline{3-9}
+								& 								& 10					& \multicolumn{3}{c|}{198}				& 64\%					& 27\%						& 25\%						\\ \cline{3-9}
+								& 								& 20					& \multicolumn{3}{c|}{133}				& 42\%					& 19\%						& 19\%						\\ \cline{3-9}
+								& 								& 30					& \multicolumn{3}{c|}{99.1}				& 30\%					& 9\%						& 14\%						\\ \cline{2-9}
+								
+								& \multirow{5}{*}{Batching}		& 2						& \multicolumn{3}{c|}{350}				& \multirow{8}{*}{100\%}& \multirow{8}{*}{100\%}	& \multirow{8}{*}{100\%}	\\ \cline{3-6}
+								& 								& 5						& \multicolumn{3}{c|}{186}				&						&							&							\\ \cline{3-6}
+								& 								& 10					& \multicolumn{3}{c|}{115}				&						&							&							\\ \cline{3-6}
+								& 								& 20					& \multicolumn{3}{c|}{80.1}				&						&							&							\\ \cline{3-6}
+								& 								& 30					& \multicolumn{3}{c|}{68.3}				&						&							&							\\ \cline{2-6}
+								
+								& \multicolumn{2}{l|}{Significant Motion}				& \multicolumn{3}{c|}{318}				& 						& 							& 							\\ \cline{2-6}
+								& \multicolumn{2}{l|}{Simple Configurable Classifier}	& 311		& 65.7		& 51.7			& 						& 							& 							\\ \cline{2-6}
+								& \multicolumn{2}{l|}{Oracle}							& 266		& 62.9		& 34.9			& 						& 							& 							\\ \hline
+    \end{tabular}
+}
+	\caption{Event recall and average power for synthetic traces.}
+	\label{table:summaryRecallPower}
+\end{table*}

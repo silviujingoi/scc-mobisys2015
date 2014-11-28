@@ -1,0 +1,88 @@
+
+\section{\label{sec:Introduction}Introduction}
+
+Today, smartphones and tablets are used primarily to run interactive
+foreground applications, such as games and web browsers.  As a result,
+current mobile devices are optimized for a use case where applications
+are used intermittently during the day, in sessions that last for
+several minutes.  For example, during her break Alice picks up
+her phone, checks the weather, reads the latest news and plays a
+game for a few minutes, and then puts it away to go back to work.  To
+maximize battery life, current mobile devices are designed to go
+into sleep state for most of the day when they are not supporting such
+interactive usage.
+
+Unfortunately, most mobile platforms are a poor match for a growing
+class of mobile applications that perform continuous background
+sensing.  Examples range from context-aware applications~\cite{baldauf2007survey,hong2009context}, such as
+medical applications~\cite{hameed2003application,preuveneers2008mobile,tsai2007usability} that improve our
+well-being or even save lives using activity recognition (e.g., fall
+detection), to applications that use participatory sensing to get a
+better understanding of the physical world, such as noise pollution
+monitoring~\cite{maisonneuve2009citizen,maisonneuve2009noisetube} or 
+traffic prediction~\cite{hull2006cartel}.  While the processing demands of
+these applications are modest most of the time, they require periodic
+collection of sensor readings, which prevents the device from going to
+sleep for extended periods of time.  As a result, applications that
+perform continuous sensing may cause the device's battery to drain
+within several hours.
+
+To improve support for continuous sensing applications the research
+community has proposed the use of fully progra\-mmable heterogeneous
+architectures~\cite{reflex,littlerock,turducken}.  In these
+approaches, developers partition their applications to offload the
+initial stages of the application to a low-power processor (or a
+hierarchy of processors).  When the code running on the low power
+processor detects the occurrence of an event of interest, it proceeds
+to wake up the phone and passes control to the rest of the
+application.  While the ability to run custom code on the low-power
+hardware provides great flexibility, the significant complexity
+inherent in this approach has so far prevented its adoption in
+commercial devices.  Instead, smartphone manufacturers, realizing the
+potential of sensing applications, have recently incorporated
+low-power processors into their architectures, but have limited
+application developers to APIs that provide fixed functionality, by
+either batching sensor readings or recognizing a small number of
+predefined activities that can be used as wake-up
+conditions~\cite{androidMotionSensors,coreMotion,motox}.
+Unfortunately, batching is inefficient for applications that depend on
+infrequent events and is not appropriate for applications that require
+crisp response time.  Similarly, an activity recognition API provides
+little flexibility with no support for applications interested in
+events that are not covered by the set of predefined activities.
+
+This paper proposes {\em Simple Configurable Classifiers} (SCC), a new
+approach for continuous mobile sensing that splits the work of
+energy-efficient event detection between the platform and the
+application developer.  In the new approach, the platform implements
+common sensor data processing algorithms (e.g., windowing, noise 
+reduction, feature extraction, admission control) that execute on a 
+low-power sensor hub, and application developers construct simple 
+classifiers for events of interest by selecting among the set of
+pre-defined common processing algorithms and tuning their
+parameters.  The simple classifiers execute on the
+low-power sensor hub and, when events of interest are detected, the
+main processor is woken up and the rest of the application code is
+invoked.
+  
+We argue that SCC provides a better
+balance between flexibility and ease of deployment than existing
+approaches.  The approach empowers developers to create a broad set of
+event classifiers that can be used to detect a wide range of
+activities.  Simultaneously, these classifiers are significantly
+easier to program compared to fully programmable offloading.
+Moreover, since the pre-processing algorithms are pre-specified, their
+implementations can be optimized (by the device manufacturer) for each
+low-power processor, improving application portability between
+devices.  
+
+The rest of this paper is organized as follows.
+The next section discusses existing approaches to
+continuous sensing and their limitations.  Sections~\ref{sec:conjecture}
+and~\ref{sec:prototype} describe our new approach for continuous sensing
+and our Nexus 4-based prototype.  Sections~\ref{sec:experimentalSetup} 
+and~\ref{sec:results} present our
+experimental setup and the results from our evaluation.  Finally,
+Sections~\ref{sec:related} and~\ref{sec:conclusion} describe our work
+in the context of related work and conclude the paper.
+

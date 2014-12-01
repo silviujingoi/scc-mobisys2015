@@ -1,12 +1,13 @@
-
+\bgroup
+\def\arraystretch{1.5}
 \begin{table*}
 \centering
 {\small
     \begin{tabular}{|l|l|c|c|c|c|c|c|c|}
     \hline
-	\multirow{2}{*}{~}			& \multirow{2}{*}{Approach}		& \multirow{2}{*}{\parbox{1.9cm}{Sleep Interval (seconds)}}	
-																						& \multicolumn{3}{c|}{Average Power (mW)}		& \multicolumn{3}{c|}{Recall} 													\\ \cline{4-9}
-								&								&						& Steps		& Headbutts	& Transitions	& Steps					& Headbutts					& Transitions 				\\ \hline
+	\multirow{2}{*}{~}			& \multirow{2}{*}{\bf Approach}	& \multirow{2}{*}{\parbox{2.1cm}{\bf Sleep Interval (seconds)}}	
+																						& \multicolumn{3}{c|}{\bf Average Power (mW)}		& \multicolumn{3}{c|}{\bf Recall} 													\\ \cline{4-9}
+								&								&						& {\bf Steps}	& {\bf Headbutts}	& {\bf Transitions}	& {\bf Steps}	& {\bf Headbutts}	& {\bf Transitions} 				\\ \hline
 	\multirow{14}{*}{\parbox{1.2cm}{Group 1 90\% idle}}	
 								& \multirow{5}{*}{Duty Cycling}	& 2						& \multicolumn{3}{c|}{339}				& 94\%					& 57\%						& 97\%						\\ \cline{3-9}
 								& 								& 5						& \multicolumn{3}{c|}{217}				& 82\%					& 14\%						& 47\%						\\ \cline{3-9}
@@ -62,3 +63,4 @@
 	\caption{Event recall and average power for synthetic traces.}
 	\label{table:summaryRecallPower}
 \end{table*}
+\egroup

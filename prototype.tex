@@ -58,21 +58,24 @@ the user space.  An integrated implementation would likely make use of
 a higher bandwidth bus such as the $I^2C$ bus and require a custom
 driver.
 
-
+\bgroup
+\def\arraystretch{1.5}
 \begin{table*}[t]
+\centering
 {\small
-	\begin{tabular}{| p{7cm} | c | c |}
+	\begin{tabular}{| l | c | c |}
 		\hline
-		State 										& Average Power Consumption (mW) 		& Average Duration \\ \hline
-		Awake, running sensor-driven application 	& 323 & N/A \\ \hline
-		Asleep 										& 9.7 & N/A \\ \hline
-		Asleep-to-Awake Transition 					& 384 & 1 second \\ \hline
-		Awake-to-Asleep Transition 					& 341 & 1 second \\ \hline
+		\textbf{State}								& \textbf{Average Power Consumption (mW)} 		& \textbf{Average Duration} \\ \hline
+		Awake, running sensor-driven application 	& 323 											& N/A \\ \hline
+		Asleep 										& 9.7 											& N/A \\ \hline
+		Asleep-to-Awake Transition 					& 384 											& 1 second \\ \hline
+		Awake-to-Asleep Transition 					& 341 											& 1 second \\ \hline
 	\end{tabular}
 }
-	\caption{Google Nexus 4 power profile. \hl{TODO: Improve formatting}}
+	\caption{Google Nexus 4 power profile.}
 	\label{table:powerProfileNexus}
 \end{table*}
+\egroup
 
 We power profiled the Google Nexus 4.  The results are summarized in
 Table~\ref{table:powerProfileNexus}.  During all the measurements, the

@@ -151,18 +151,19 @@ attribute the relatively high power consumption to the fact the human subjects
 were performing a wide range of activities.  While most of the activities were 
 not events of interest, they resulted in unnecessary wake-ups.
 
-
+\bgroup
+\def\arraystretch{1.5}
 \begin{table*}[t]
 \centering
 {\small
     \begin{tabular}{|l|c|c|c|c|c|c|}
     \hline
-	\multirow{3}{*}{Approach}		& \multirow{3}{*}{\parbox{1.9cm}{Sleep Interval (seconds)}}
-												& \multicolumn{3}{c|}{Average Power (mW)}
-																								& \multirow{3}{*}{\parbox{1.5cm}{Average Recall}} \\ \cline{3-5}
-									&			& Trace 1		& Trace 2		& Trace 3 		& 							\\ 
+	\multirow{3}{*}{\bf Approach}	& \multirow{3}{*}{\parbox{2.1cm}{\bf Sleep Interval (seconds)}}
+												& \multicolumn{3}{c|}{\bf Average Power (mW)}
+																								& \multirow{3}{*}{\bf Average Recall} \\ \cline{3-5}
+									&			& {\bf Trace 1}	& {\bf Trace 2}	&{\bf Trace 3}	& 							\\ 
 									&			& 37\% walking	& 22\% walking	& 20\% walking	& \\ \hline
-	Always Awake					& 			& \multicolumn{3}{c|}{323} 						& 100\% \\ \hline
+	\multicolumn{2}{|l|}{Always Awake}			& \multicolumn{3}{c|}{323} 						& 100\% \\ \hline
 	\multirow{5}{*}{Duty Cycling}	& 2			& 329			& 330			& 330			& 97\%	\\ \cline{2-6}
 									& 5			& 272			& 260			& 261			& 92\%	\\ \cline{2-6}
 									& 10		& 220			& 195			& 198			& 82\%	\\ \cline{2-6}
@@ -173,17 +174,18 @@ not events of interest, they resulted in unnecessary wake-ups.
 	 								& 10		& \multicolumn{3}{c|}{115} 						& 100\% \\ \cline{2-6}
 	 								& 20		& \multicolumn{3}{c|}{80.1} 					& 100\% \\ \cline{2-6}
 	 								& 30		& \multicolumn{3}{c|}{68.3} 					& 100\% \\ \hline
-	Significant Motion				&			& 282			& 157			& 163			& 100\% \\ \hline
-	SCC								&			& 136			& 77.9			& 72.6			& 100\% \\ \hline
-	Oracle							&			& 117.8			& 65.8			& 62.3			& 100\% \\ \hline
+	\multicolumn{2}{|l|}{Significant Motion}	& 282			& 157			& 163			& 100\% \\ \hline
+	\multicolumn{2}{|l|}{SCC}					& 136			& 77.9			& 72.6			& 100\% \\ \hline
+	\multicolumn{2}{|l|}{Oracle}				& 117.8			& 65.8			& 62.3			& 100\% \\ \hline
 
 
 
     \end{tabular}
 }
-	\caption{Event recall and average power for human traces. \hl{Improve formatting}}
+	\caption{Event recall and average power for human traces.}
 	\label{table:macrobenchmarksAccel}
 \end{table*}
+\egroup
 
 
 \subsection{Audio Traces}
@@ -209,13 +211,15 @@ implementation for 2 out of the 3 applications.  For phrase detection, the Oracl
 only wakes up when the phrase of interest occurs (<1\% of the trace), while
 the SCC is detecting speech segments (5\% of the trace).
 
+\bgroup
+\def\arraystretch{1.5}
 \begin{table}[t]
 \centering
 {\small
 	\begin{tabular}{|l|c|c|c|}
 	\hline
 	\textbf{Wake-up Mechanism}     & \textbf{Sirens}   & \textbf{Music}   & \textbf{Phrase} \\ \hline
-	Oracle                          & 16.8              & 27.2             & 14.7            \\ \hline
+	Oracle                         & 16.8              & 27.2             & 14.7            \\ \hline
 	Significant Sound Intensity    & 51.9              & 51.9             & 51.9            \\ \hline
 	Simple Configurable Classifier & 17.2              & 32.3             & 35.6            \\ \hline         
 	\end{tabular}
@@ -223,5 +227,6 @@ the SCC is detecting speech segments (5\% of the trace).
 \caption{Average power consumption for the audio applications.  Values measured in milliwatts.}
 \label{table:macrobenchmarksAudio}
 \end{table}
+\egroup
 
 \hl{TODO: Tables 4 and 5 are sometimes out of order}

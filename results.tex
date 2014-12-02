@@ -89,30 +89,12 @@ would be inefficient for infrequent events of interest.
 
 By comparing the performance of the SCC approach to Oracle we
 observe that for most usage scenarios, the SCC approach
-achieves over 95\% of the available power
+achieves over 90\% of the available power
 savings\footnote{$Available\:Savings=Always\:Awake - Oracle$}.
 We conclude that a system that allows
 custom code offloading to the low-power processor can achieve minimal
 additional power savings.
 
-\iffalse
-\begin{table}[t]
-\centering
-{\small
-    \begin{tabular}{|l|l|c|c|c|c|c|}
-	\hline
-    \multirow{2}{*}{Filter}    	& \multicolumn{3}{c|}{Power Consumption (mW)} \\ \cline{2-4}
-							& Steps	& Headbutts	& Transitions 	\\ \hline
-    Null     				& 191		& 186		& 67.8 			\\ \hline
-	EMA   				& {\bf 188}		& 228		& {\bf 43.3} 			\\ \hline
-	FFT 				& 217		& {\bf 65.1} 		& 88.7 			\\ \hline
-	
-    \end{tabular}
-}
-	\caption{Different wake-up conditions.}
-	\label{table:WUCfilters}
-\end{table}
-\fi
 
 \subsubsection{SCC: Algorithm Parameter Configuration}
 
@@ -135,21 +117,28 @@ because of unnecessary wake-ups.
 
 \subsection{Human Traces}
 
-Table~\ref{table:macrobenchmarksAccel} shows the results from running the
-step detector application on traces collected from three human
-subjects.  Since these traces are not annotated with ground truth, we
-use the steps detected by a {\em Always Awake} configuration as the baseline for
-determining recall.
-
-The results from these experiments show very similar
-benefits to the synthetic experiments for runs with low and medium
-levels of activity.  For example, the SCC approach achieves
-at least 91\% of the available power saving in each of the traces.  
-
-Additionally, we note that the generic wake-up condition performs poorly.  We 
-attribute the relatively high power consumption to the fact the human subjects 
-were performing a wide range of activities.  While most of the activities were 
-not events of interest, they resulted in unnecessary wake-ups.
+\bgroup
+\def\arraystretch{1.5}
+\begin{table}[t]
+\begin{threeparttable}
+\centering
+{\small
+	\begin{tabular}{|l|c|c|c|}
+	\hline
+	\textbf{Wake-up Mechanism}     & \textbf{Sirens}   & \textbf{Music}   & \textbf{Phrase} \\ \hline
+	Oracle                         & 16.8              & 27.2             & 14.7            \\ \hline
+	Significant Sound Intensity    & 51.9              & 51.9             & 51.9            \\ \hline
+	Simple Configurable Classifier & 63.1\tnote{*}    & 32.3             & 35.6            \\ \hline         
+	\end{tabular}
+	\begin{tablenotes}
+		\item{*} Includes the power consumption of the Stellaris LM4F120H5QR
+	\end{tablenotes}
+}
+\caption{Average power consumption for the audio applications.  Values measured in milliwatts.}
+\label{table:macrobenchmarksAudio}
+\end{threeparttable}
+\end{table}
+\egroup
 
 \bgroup
 \def\arraystretch{1.5}
@@ -187,6 +176,23 @@ not events of interest, they resulted in unnecessary wake-ups.
 \end{table*}
 \egroup
 
+Table~\ref{table:macrobenchmarksAccel} shows the results from running the
+step detector application on traces collected from three human
+subjects.  Since these traces are not annotated with ground truth, we
+use the steps detected by a {\em Always Awake} configuration as the baseline for
+determining recall.
+
+The results from these experiments show very similar
+benefits to the synthetic experiments for runs with low and medium
+levels of activity.  For example, the SCC approach achieves
+at least 91\% of the available power saving in each of the traces.  
+
+Additionally, we note that the generic wake-up condition performs poorly.  We 
+attribute the relatively high power consumption to the fact the human subjects 
+were performing a wide range of activities.  While most of the activities were 
+not events of interest, they resulted in unnecessary wake-ups.
+
+
 
 \subsection{Audio Traces}
 
@@ -205,28 +211,16 @@ in practice, a generic wake-up condition such as this one would be more
 lenient (such that it doesn't miss any events of interest), but also consume
 more power due to an increased number of unnecessary wake-ups.
 
-Similarly to previous simulations, SCC performs better than the generic
-wake-up condition in all scenarios, and nearly matches the power savings of an ideal 
-implementation for 2 out of the 3 applications.  For phrase detection, the Oracle
+SCC performs better than the generic wake-up condition for 2 out of the 3
+activities, and nearly matches the power savings of an ideal 
+implementation for music detection.  
+
+Due to the higher complexity of the SCC used for siren detection, the more 
+powerful Stellaris LM4F120H5QR micro-controller had to be used instead of
+the MSP430.  This resulted in an increase in average power consumption by 
+more than 40 mW.
+
+For phrase detection, the difference in power consumption between SCC and
+the Oracle is attributed to the design of the simple classifier.  The Oracle 
 only wakes up when the phrase of interest occurs (<1\% of the trace), while
 the SCC is detecting speech segments (5\% of the trace).
-
-\bgroup
-\def\arraystretch{1.5}
-\begin{table}[t]
-\centering
-{\small
-	\begin{tabular}{|l|c|c|c|}
-	\hline
-	\textbf{Wake-up Mechanism}     & \textbf{Sirens}   & \textbf{Music}   & \textbf{Phrase} \\ \hline
-	Oracle                         & 16.8              & 27.2             & 14.7            \\ \hline
-	Significant Sound Intensity    & 51.9              & 51.9             & 51.9            \\ \hline
-	Simple Configurable Classifier & 17.2              & 32.3             & 35.6            \\ \hline         
-	\end{tabular}
-}
-\caption{Average power consumption for the audio applications.  Values measured in milliwatts.}
-\label{table:macrobenchmarksAudio}
-\end{table}
-\egroup
-
-\hl{TODO: Tables 4 and 5 are sometimes out of order}

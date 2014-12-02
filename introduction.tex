@@ -76,6 +76,24 @@ implementations can be optimized (by the device manufacturer) for each
 low-power processor, improving application portability between
 devices.  
 
+To evaluate the benefits of SCC, we developed applications that use 
+accelerometer readings or audio data to detect several events of 
+interest.  Additionally, we built a prototype implementation that extends 
+a Nexus 4 phone with a low-power sensor board.  To enable us to 
+conduct controlled and repeatable experiments,
+we mounted the prototype on an AIBO ERA 210 robot dog.  Experiments 
+conducted on accelerometer traces collected with this setup,
+as well as accelerometer traces collected from human subjects and audio
+traces collected in various environments, show that
+SCC can reduce the average energy required to run continuous
+sensing application by up to 94\%, while matching the detection recall
+and precision of an approach that keeps the phone awake at all times.
+Moreover, for most of our usage scenarios, the SCC approach
+achieves over 90\% of the power savings achieved by a ``perfect''
+wake-up mechanism, indicating that an implementation that supports
+custom code offloading will achieve only marginal additional
+improvements.
+
 The rest of this paper is organized as follows.
 The next section discusses existing approaches to
 continuous sensing and their limitations.  Sections~\ref{sec:conjecture}

@@ -2,7 +2,7 @@
 \label{sec:conjecture}
 
 We argue that continuous mobile sensing applications should be
-structured as a pair of classifiers of increasing complexity: A simple
+structured as a pair of classifiers of increasing complexity: a simple
 high recall and moderate precision classifier that runs continuously
 on low-power hardware, and acts as an energy efficient wake-up
 mechanism for a higher complexity classifier that runs on the main CPU
@@ -47,6 +47,7 @@ Fourier transform, among others.
 
 
 \begin{figure}[t]
+	\centering
 	\includegraphics[width=3.1in]{architecture.png}
 	\caption{Proposed system architecture.}
     \label{fig:architecture}
@@ -95,7 +96,7 @@ SCC has many benefits:
 There are many challenges that will have to be resolved in order to
 make SCC possible:
 
-{\bf Identifying pre-processing algorithms} Defining the appropriate
+{\bf Identifying processing algorithms} Defining the appropriate
 set of algorithms that should be included in the API and executed on
 the low-power processor for each sensor is a key challenge. First,
 there is a trade-off between algorithm generality and accuracy.
@@ -146,7 +147,7 @@ executions, energy budget, cost and physical size of the sensor node
 is an open challenge.
 
 {\bf Sensor fusion} Fusing inputs from multiple sensors is a common
-technique used for improving the accuracy of sensing application.
+technique used for improving the accuracy of sensing applications.
 Whether low power sensor hubs should include support for sensor
 fusion, however, is not clear.  On the one hand, such support could
 increase energy efficiency by reducing the occurrence of unnecessary

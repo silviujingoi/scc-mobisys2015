@@ -116,10 +116,10 @@ if the window contains pitched sounds.  Pitched sounds between 850 Hz and 1800 H
 that last longer 650 ms are classified as sirens. 
 
 {\bf Music Journal} Creates a list of all the songs heard during the
-day using the web services provided by Echoprint.me \hl{cite?}
+day using the web services provided by Echoprint.me~\cite{todo}.
 
 {\bf Phrase Detection} Detects specific phrases using web services
-accessible via the Google Speech API. \hl{cite?}
+accessible via the Google Speech API~\cite{todo}.
 
 
 \subsection{Configurations}
@@ -196,13 +196,15 @@ phrase detection is a complex process that requires algorithms not implemented
 by our sensor node.  As a compromise, the SCC for the phrase detection application
 is used to wake-up the device when any speech is detected.
 
-\hl{TODO: add remaining pipelines && make figure more legible}
+Each of the classifiers ends with an admission control step with configurable 
+thresholds.  A classifier detects events of interest when the relevant
+data or extracted features fulfil the admission control conditions. 
 
-\begin{figure}[t]
-	\includegraphics[width=3in]{sccPipelines.png}
+\begin{figure*}[t]
+	\includegraphics[width=7in]{sccPipelines.png}
 	\caption{SCC pipelines for each of the applications.}
 	\label{fig:sccPipelines}
-\end{figure}
+\end{figure*}
 
 
 

@@ -32,7 +32,7 @@ community has proposed the use of fully progra\-mmable heterogeneous
 architectures~\cite{reflex,littlerock,turducken}.  In these
 approaches, developers partition their applications to offload the
 initial stages of the application to a low-power processor (or a
-hierarchy of processors).  When the code running on the low power
+hierarchy of processors).  When the code running on the low-power
 processor detects the occurrence of an event of interest, it proceeds
 to wake up the phone and passes control to the rest of the
 application.  While the ability to run custom code on the low-power
@@ -44,7 +44,7 @@ low-power processors into their architectures, but have limited
 application developers to APIs that provide fixed functionality, by
 either batching sensor readings or recognizing a small number of
 predefined activities that can be used as wake-up
-conditions~\cite{androidMotionSensors,coreMotion,motox}.
+conditions~\cite{androidMotionSensors,coreMotion,x8mobile}.
 Unfortunately, batching is inefficient for applications that depend on
 infrequent events and is not appropriate for applications that require
 crisp response time.  Similarly, an activity recognition API provides
@@ -71,7 +71,7 @@ approaches.  The approach empowers developers to create a broad set of
 event classifiers that can be used to detect a wide range of
 activities.  Simultaneously, these classifiers are significantly
 easier to program compared to fully programmable offloading.
-Moreover, since the pre-processing algorithms are pre-specified, their
+Moreover, since the algorithms are pre-specified, their
 implementations can be optimized (by the device manufacturer) for each
 low-power processor, improving application portability between
 devices.  
@@ -86,7 +86,7 @@ conducted on accelerometer traces collected with this setup,
 as well as accelerometer traces collected from human subjects and audio
 traces collected in various environments, show that
 SCC can reduce the average energy required to run continuous
-sensing application by up to 94\%, while matching the detection recall
+sensing applications by up to 94\%, while matching the detection recall
 and precision of an approach that keeps the phone awake at all times.
 Moreover, for most of our usage scenarios, the SCC approach
 achieves over 90\% of the power savings achieved by a ``perfect''

@@ -29,7 +29,7 @@ experiments) and a list of timestamped acceleration readings.
 In each run, the robot performed five different actions: standing
 idle, walking, sit-to-stand transitions, stand-to-sit transitions, and
 headbutts.  We created runs with three different levels of activity.
-Runs in groups 1, 2 and 3 spent 90\% , 50\% and 10\% of the time
+Runs in groups 1, 2 and 3 spent 90\%, 50\% and 10\% of the time
 standing idle, respectively. The reminder of the time was allocated as
 follows: 73\% for walking, 24\% for transitions between sitting and
 standing, and 3\% for headbutts.  This setup allows us to experiment
@@ -77,7 +77,7 @@ approximate closely the results of experiments conducted on limited
 traces collected from human subjects.
 
 {\bf Steps} Counts how many steps the robot takes when it
-  walks. It's algorithm is based on the human step detection algorithm
+  walks. The algorithm is based on the human step detection algorithm
   proposed by Ryan Libby in~\cite{libbyFootstepDetection}. The
   application takes in raw accelerometer readings and applies a
   low-pass filter on the x-axis acceleration. It then searches for
@@ -116,10 +116,10 @@ if the window contains pitched sounds.  Pitched sounds between 850 Hz and 1800 H
 that last longer 650 ms are classified as sirens. 
 
 {\bf Music Journal} Creates a list of all the songs heard during the
-day using the web services provided by Echoprint.me~\cite{todo}.
+day using the web services provided by Echoprint.me~\cite{echoprint}.
 
 {\bf Phrase Detection} Detects specific phrases using web services
-accessible via the Google Speech API~\cite{todo}.
+accessible via the Google Speech API.
 
 
 \subsection{Configurations}

@@ -1,4 +1,12 @@
 \section{Related Work}\label{sec:related}
+\hl{ Silviu: I'm not sure if this is how I should reference our HotMobile paper}
+
+This work is an extension of our position paper~\cite{todo}, 
+where we provided preliminary results showing the potential benefits
+of simple configurable classifiers. Our current work supplements our 
+previous findings through the development of
+a prototype system and an extensive evaluation using accelerometer 
+and audio applications.
 
 The idea of waking up a device when an event of interest occurs has been 
 around since the inception of mobile phones. The phone's radio 
@@ -17,19 +25,24 @@ devices. Reflex ~\cite{reflex} complements the idea proposed by Turducken
 by providing a shared memory abstraction to be used by the different 
 processors.
 
-Smartsensors differs from these approaches by hiding the heterogeneous 
+Simple Configurable Classifiers differ from these approaches by hiding the heterogeneous 
 nature of the system from the application developer. Creating an 
-application that makes use of one or more Smartsensors does not require 
-the developer to create any code that will run on the low-power processor(
-s). We limit the available interface in order to increase portability, 
+application that makes use of SCC does not require 
+the developer to create any code that will run on the low-power 
+processor(s).  We limit the available interface in order to increase 
+portability, 
 while still achieving the majority of the potential power savings.
 
-\hl{Add a few sentences about iPhone} Smartphone manufacturers have started to incorporate low-power
+Smartphone manufacturers have started to incorporate low-power
 processors into their architectures, but have only implemented limited
-APIs that provide fixed functionality. The Google Nexus 5 allows
-batching of sensor readings~\cite{android4.4,nexus5}, and the
+APIs that provide fixed functionality.  Apple's M7 and M8 motion
+co-processors are used to collect, process, and store sensor data 
+even while the main CPU is asleep and applications can retrieve 
+historical motion data via the CoreMotion API~\cite{coreMotion}.  Some
+recent Android devices allow
+batching of sensor readings~\cite{xx,xx}, and the
 Motorola Moto X provides recognition for a small number of predefined
-activities that can be used as wake-up conditions~\cite{motox}. While
+activities that can be used as wake-up conditions~\cite{motox}.  While
 these wake-up conditions work well for some applications, they are
 inefficient for many other types of applications that are not
 interested in the set of predefined activities.

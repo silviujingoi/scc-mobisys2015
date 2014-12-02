@@ -1,5 +1,6 @@
 
 \begin{figure}[t]
+	\centering
 	\includegraphics[width=3.1in]{prototype_architecture.png}
 	\caption{Prototype architecture.}
     \label{fig:prototypeArchitecture}
@@ -160,7 +161,7 @@ We implemented three filters of increasing complexity:
 \subsubsection{Hardware Options}
 
 We evaluated two low-power micro-controllers manufactured by Texas
-Instruments, the MSP430 and the Stellaris LM4F120H5QR.  The MSP430 has
+Instruments, the MSP430 and the Stellaris LM4F\-120H5QR.  The MSP430 has
 the advantage of requiring very little power, consuming only 3.6 mW
 while awake.  However, it has limited memory and cannot perform complex
 analysis of sensor data in real-time.  In our tests, it was unable to
@@ -172,6 +173,7 @@ micro-controller has an energy footprint an order of magnitude greater
 than the MSP430, consuming an average of 49.4 mW while awake.
 
 \begin{figure}[t]
+	\centering
 	\includegraphics[width=3in]{aibo_ers_210.jpg}
 	\caption{AIBO ERS 210 with Smartsensor prototype.}
 	\label{fig:aibo}
